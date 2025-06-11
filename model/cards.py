@@ -10,7 +10,7 @@ class Cards(Base):
     # General Info
     id = Column(String, primary_key=True)
     name = Column(String, nullable=False)
-    hp = Column(Integer, nullable=False)
+    hp = Column(Integer)
     number = Column(Integer, nullable=False)
     rarity = Column(Integer, nullable=False)
     supertype = Column(Integer, nullable=False)

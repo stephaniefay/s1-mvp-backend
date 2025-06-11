@@ -1,12 +1,12 @@
 from sqlalchemy_utils import database_exists, create_database
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 import os
 
 # importando os elementos definidos no modelo
 from model.base import Base
-from model.attacks import Attacks
 from model.abilities import Abilities
+from model.attacks import Attacks
 from model.card_abilities import CardAbilities
 from model.card_attacks import CardAttacks
 from model.card_resistances import CardResistances
@@ -41,8 +41,28 @@ engine = create_engine(db_url, echo=False)
 Session = sessionmaker(bind=engine)
 
 # cria o banco se ele não existir
+empty_db = False
 if not database_exists(engine.url):
+    empty_db = True
     create_database(engine.url)
 
 # cria as tabelas do banco, caso não existam
 Base.metadata.create_all(engine)
+
+if empty_db:
+    with engine.connect() as connection:
+        with open('database/sets.sql', 'r', encoding='utf-8') as sets:
+            for line in sets:
+                line = line.replace('\n', '')
+                connection.execute(text(line))
+                connection.commit()
+        sets.close()
+
+        with open('database/cards.sql', 'r', encoding='utf-8') as cards:
+            for line in cards:
+                line = line.replace('\n', '')
+                connection.execute(text(line))
+                connection.commit()
+        cards.close()
+
+

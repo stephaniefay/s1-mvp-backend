@@ -3,7 +3,7 @@ Essa é a contra-parte do projeto [frontend](https://github.com/stephaniefay/s1-
 
 O projeto é uma API que contém informações detalhadas sobre coleções e cartas de um trading card game onde o Usuário poderá navegar e buscar informações relativas, além de poder adicioná-las à sua lista de desejos (`Wish` como é referenciado nos projetos)
 
-Dados mockados foram gerados utilizando uma API pública em json e posteriormente convertido usando o seguinte [projeto](https://github.com/stephaniefay/json_reader/tree/master).
+Dados mockados foram gerados utilizando uma API pública em json e posteriormente convertido usando o seguinte [projeto](https://github.com/stephaniefay/json_reader/tree/master), a primeira execução pode ser um pouco mais demorada porque ele estará inicializando o banco com todas as informações necessárias para a real utilização da API.
 
 ## Como executar
 
