@@ -6,3 +6,15 @@ class ImageSchema (BaseModel):
     logo: Optional[str] = ''
     small: Optional[str] = ''
     large: Optional[str] = ''
+
+def build_images_set(symbol:str, logo:str):
+    return {
+        'symbol': symbol,
+        'logo': logo
+    }
+
+def build_images_card(small:str, large:str):
+    return {
+        'small': small,
+        'large': large
+    }

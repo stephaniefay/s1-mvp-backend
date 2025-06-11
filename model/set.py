@@ -4,6 +4,7 @@ from sqlalchemy import Column, String, Integer, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 
 from model import Base
+from model.series import Series
 
 
 class Set(Base):
@@ -12,9 +13,9 @@ class Set(Base):
     # General Info
     id = Column(String, primary_key=True)
     name = Column(String, nullable=False)
-    series = Column(Integer, nullable=False)
+    series = Column(Integer, ForeignKey(Series.id), nullable=False)
     collection_total = Column(Integer, nullable=False)
-    release_date = Column(DateTime)
+    release_date = Column(String)
     ptcgo_code = Column(String)
 
     # Legalities

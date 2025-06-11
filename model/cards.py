@@ -2,7 +2,7 @@ from sqlalchemy import Column, String, Integer, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 
 from model import Base
-
+from model.supertype import Supertype
 
 class Cards(Base):
     __tablename__ = 'cards'
@@ -13,7 +13,7 @@ class Cards(Base):
     hp = Column(Integer)
     number = Column(Integer, nullable=False)
     rarity = Column(Integer, nullable=False)
-    supertype = Column(Integer, nullable=False)
+    supertype = Column(Integer, ForeignKey(Supertype.id), nullable=False)
     rules = Column(String)
 
     # Images
@@ -24,14 +24,6 @@ class Cards(Base):
     unlimited = Column(Integer)
     expanded = Column(Integer)
     standard = Column(Integer)
-
-    attack_obj = relationship('CardAttacks')
-    supertype_obj = relationship('Supertype')
-    subtype_obj = relationship('CardSubtypes')
-    type_obj = relationship('CardTypes')
-    resistance_obj = relationship('CardResistance')
-    weakness_obj = relationship('CardWeaknesses')
-    ability_obj = relationship('CardAbilities')
 
 def __init__(self, id:str, name:str, hp:int, number:int, rarity:int, supertype:int, image_sm:str, image_lg:str,
              unlimited:int, expanded:int, standard:int):

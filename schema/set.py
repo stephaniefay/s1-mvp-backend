@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional, List
 from model.set import Set
+from schema import build_legality, build_images_set
 
 from schema.image import ImageSchema
 from schema.legality import LegalitySchema
@@ -32,11 +33,11 @@ def build_set_list(sets: List[Set]):
             "id": set.id,
             "name": set.name,
             "series": set.series_obj.name,
-            "printedTotal": set.printedTotal,
-            "legalities": set.legalities,
-            "ptcgoCode": set.ptcgoCode,
-            "releaseDate": set.releaseDate,
-            "images": set.images
+            "printedTotal": set.collection_total,
+            "legalities": build_legality(set.unlimited, set.standard, set.expanded),
+            "ptcgoCode": set.ptcgo_code,
+            "releaseDate": set.release_date,
+            "images":build_images_set(set.image_symbol, set.image_logo)
         })
     return {"sets": result}
 
@@ -46,9 +47,9 @@ def build_set(set: Set):
         "id": set.id,
         "name": set.name,
         "series": set.series_obj.name,
-        "printedTotal": set.printedTotal,
-        "legalities": set.legalities,
-        "ptcgoCode": set.ptcgoCode,
-        "releaseDate": set.releaseDate,
-        "images": set.images
+        "printedTotal": set.collection_total,
+        "legalities": build_legality(set.unlimited, set.standard, set.expanded),
+        "ptcgoCode": set.ptcgo_code,
+        "releaseDate": set.release_date,
+        "images":build_images_set(set.image_symbol, set.image_logo)
     }

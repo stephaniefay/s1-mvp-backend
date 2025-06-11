@@ -20,9 +20,9 @@ set_tag = Tag(name="Coleções", description="Endpoints de Coleção")
 def home():
     return redirect('/openapi/swagger')
 
-@app.get('/sets', tags=[set_tag], responses={"200": SetSchema})
+@app.get('/sets', tags=[set_tag], responses={"200": SetListSchema})
 def get_sets():
     session = Session()
-    session.query(SetSchema).filter(SetSchema.id == 2).first()
+    sets = session.query(Set).all()
 
-    return build_set(set), 200
+    return build_set_list(sets), 200
