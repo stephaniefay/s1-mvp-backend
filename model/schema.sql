@@ -92,7 +92,7 @@ CREATE TABLE "set" (
   "expanded" boolean,
   "standard" boolean,
   "image_logo" text,
-  "image _symbol" text,
+  "image_symbol" text,
   "release_date" date,
   "ptcgo_code" text,
   PRIMARY KEY ("id")

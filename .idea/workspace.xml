@@ -4,11 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58b40a52-6cae-455d-9fe5-253c152c44b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="58b40a52-6cae-455d-9fe5-253c152c44b9" name="Changes" comment="defining schemas for future reference">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/abilities.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/attacks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/card_abilities.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/card_attacks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/card_resistances.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/card_subtypes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/card_types.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/card_weaknesses.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/cards.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/cost.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/resistances.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/series.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/set_cards.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/subtype.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/supertype.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/weaknesses.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/wish_cards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/schemas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/schemas/attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/attack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/schemas/auxiliary.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/auxiliary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/schemas/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/schemas/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/schemas/legality.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/legality.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/schemas/set.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/schemas/weakness.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/weakness.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/db_diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/model/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s1-mvp-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/s1-mvp-backend.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,40 +62,59 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "stephaniefay"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;stephaniefay&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/stephaniefay/s1-mvp-backend.git",
-    "accountId": "23b30549-2ab5-4ac1-a831-78985a4bb83c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/stephaniefay/s1-mvp-backend.git&quot;,
+    &quot;accountId&quot;: &quot;23b30549-2ab5-4ac1-a831-78985a4bb83c&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2yI77Bgwn9pHngakuWzbIyfCAgu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/steph/Projects/Pós PUC/Sprint 1/s1-mvp-backend/model&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.17356321&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\steph\Projects\Pós PUC\Sprint 1\s1-mvp-backend\model" />
+      <recent name="C:\Users\steph\Projects\Pós PUC\Sprint 1\s1-mvp-backend\app\database" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\steph\Projects\Pós PUC\Sprint 1\s1-mvp-backend\schema" />
+      <recent name="C:\Users\steph\Projects\Pós PUC\Sprint 1\s1-mvp-backend\model" />
+      <recent name="C:\Users\steph\Projects\Pós PUC\Sprint 1\s1-mvp-backend" />
+      <recent name="C:\Users\steph\Projects\Pós PUC\Sprint 1\s1-mvp-backend\app" />
+      <recent name="C:\Users\steph\Projects\Pós PUC\Sprint 1\s1-mvp-backend\app\api\database" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -74,8 +130,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1749510074151</updated>
-      <workItem from="1749510074603" duration="2839000" />
+      <workItem from="1749510074603" duration="14527000" />
+      <workItem from="1749577947892" duration="278000" />
+      <workItem from="1749578245117" duration="111000" />
+      <workItem from="1749578384306" duration="76000" />
+      <workItem from="1749578545131" duration="21482000" />
     </task>
+    <task id="LOCAL-00001" summary="database schema (initial)">
+      <option name="closed" value="true" />
+      <created>1749519654734</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749519654734</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactoring directories">
+      <option name="closed" value="true" />
+      <created>1749519714764</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749519714764</updated>
+    </task>
+    <task id="LOCAL-00003" summary="defining schemas for future reference">
+      <option name="closed" value="true" />
+      <created>1749521401694</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1749521401694</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,5 +176,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="database schema (initial)" />
+    <MESSAGE value="refactoring directories" />
+    <MESSAGE value="defining schemas for future reference" />
+    <option name="LAST_COMMIT_MESSAGE" value="defining schemas for future reference" />
   </component>
 </project>

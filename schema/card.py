@@ -1,11 +1,10 @@
-from unicodedata import category
 from pydantic import BaseModel
 from typing import Optional, List
 
-from app.api.schemas.attack import AttackSchema
-from app.api.schemas.image import ImageSchema
-from app.api.schemas.legality import LegalitySchema
-from app.api.schemas.weakness import WeaknessSchema
+from schema.attack import AttackSchema
+from schema.image import ImageSchema
+from schema.legality import LegalitySchema
+from schema.weakness import WeaknessSchema
 
 
 class CardSchema (BaseModel):
@@ -24,7 +23,7 @@ class CardSchema (BaseModel):
     images: ImageSchema
 
 
-class SearchCardSchema (BaseModel):
+class CardQuery (BaseModel):
     set_id: Optional[str]
     wish_id: Optional[str]
     search_clause: Optional[str]

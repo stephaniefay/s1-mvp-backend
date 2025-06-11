@@ -1,13 +1,13 @@
-from http.client import responses
-from typing import List
-
 from flask_openapi3 import OpenAPI, Info, Tag
 from flask import redirect
-from flask_cors import CORS
+from urllib.parse import unquote
 
-from app.api.schemas.auxiliary import EmptySchema
-from app.api.schemas.card import SearchCardSchema
-from app.api.schemas.set import SetSchema
+from sqlalchemy.exc import IntegrityError
+
+from model import Session, Set
+from logger import logger
+from schema import *
+from flask_cors import CORS
 
 info = Info(title="Wish", version="1.0.0")
 app = OpenAPI(__name__, info=info)
@@ -20,7 +20,9 @@ set_tag = Tag(name="Coleções", description="Endpoints de Coleção")
 def home():
     return redirect('/openapi/swagger')
 
-@app.get('/sets', tags=[set_tag], responses={"200": SetSchema, "204": EmptySchema})
+@app.get('/sets', tags=[set_tag], responses={"200": SetSchema})
 def get_sets():
+    session = Session()
+    session.query(SetSchema).filter(SetSchema.id == 2).first()
 
-    return "Hello World", 200
+    return build_set(set), 200
