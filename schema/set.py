@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Optional, List
 from model.set import Set
 from schema import build_legality, build_images_set
@@ -8,18 +8,20 @@ from schema.legality import LegalitySchema
 
 
 class SetSchema(BaseModel):
-    id:str = "SV10"
-    name:str = "Destined Rivals"
-    series:str = "Scarlet & Violet"
-    printedTotal: int = 0
+    id:str = ''
+    name:str = ''
+    series:str = ''
+    printedTotal: int
     legalities: Optional[LegalitySchema]
-    ptcgoCode: str =  "DRI"
-    releaseDate: str = "2025/05/30"
+    ptcgoCode: str =  ''
+    releaseDate: str = ''
     images: Optional[ImageSchema]
 
+class SetFetchSchema(BaseModel):
+    id: str = Field(..., description='id da coleção')
+
 class SetSearchSchema(BaseModel):
-    id: str = "SV10"
-    name: str = "Destined Rivals"
+    name: Optional[str] = Field(None, description='nome da coleção')
 
 
 class SetListSchema(BaseModel):

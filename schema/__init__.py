@@ -5,3 +5,4 @@ from schema.image import *
 from schema.legality import *
 from schema.set import *
 from schema.weakness import *
+from schema.wish import *

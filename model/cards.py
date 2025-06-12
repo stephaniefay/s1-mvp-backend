@@ -25,6 +25,12 @@ class Cards(Base):
     expanded = Column(Integer)
     standard = Column(Integer)
 
+    supertype_obj = relationship('Supertype')
+    subtype_obj = relationship('CardSubtypes')
+    type_obj = relationship('CardTypes')
+    attack_obj = relationship('CardAttacks')
+    weakness_obj = relationship('CardWeaknesses')
+
 def __init__(self, id:str, name:str, hp:int, number:int, rarity:int, supertype:int, image_sm:str, image_lg:str,
              unlimited:int, expanded:int, standard:int):
     self.id = id

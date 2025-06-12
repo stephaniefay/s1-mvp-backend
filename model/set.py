@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from sqlalchemy import Column, String, Integer, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 
@@ -29,7 +27,7 @@ class Set(Base):
 
     series_obj = relationship("Series")
 
-def __init__(self, id: str, name:str, series:int, collection_total:int, release_date:datetime, ptcgo_code:str,
+def __init__(self, id: str, name:str, series:int, collection_total:int, release_date:str, ptcgo_code:str,
              unlimited:int, expanded:int, standard:int, image_logo:str, image_symbol:str):
     self.id = id
     self.name = name
