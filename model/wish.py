@@ -10,8 +10,10 @@ class Wish(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String, nullable=False, unique=True)
-    description = Column(String)
+    description = Column(String, nullable=False)
+    color = Column(String)
 
-def __init__(self, name:str, description:str):
+def __init__(self, name:str, description:str, color:str):
     self.name = name
     self.description = description
+    self.color = color

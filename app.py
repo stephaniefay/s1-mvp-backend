@@ -1,8 +1,6 @@
-from http.client import responses
 
 from flask_openapi3 import OpenAPI, Info, Tag, request
 from flask import redirect
-from urllib.parse import unquote
 
 from sqlalchemy.exc import IntegrityError, NoResultFound
 
@@ -37,14 +35,6 @@ def get_sets(query: SetSearchSchema):
     else:
         return build_set_list(sets), 200
 
-@app.get('/sets/<string:id>', tags=[set_tag], responses={"200": SetSchema, "404": EmptySchema, "400": ErrorSchema})
-def get_set(path: SetFetchSchema):
-    try:
-        set = Session().query(Set).filter(Set.id == path.id).one()
-        return build_wish(set), 200
-    except NoResultFound:
-        return {'message': 'Não há coleção com esse id'}, 404
-
 @app.get('/sets/<string:id>/cards', tags=[set_tag], responses={"200": CardListSchema, "204": EmptySchema, "400": ErrorSchema})
 def get_set_cards(path: SetFetchSchema, query:CardSearchSchema):
     session = Session()
@@ -67,25 +57,21 @@ def get_set_cards(path: SetFetchSchema, query:CardSearchSchema):
     else:
         return build_card_list(cards, session), 200
 
-@app.get('/wishs', tags=[wish_tag], responses={"200": WishListSchema, "204": EmptySchema, "400": ErrorSchema})
-def get_wishs():
-    wishs = Session().query(Wish).all()
+@app.get('/wishes', tags=[wish_tag], responses={"200": WishListSchema, "204": EmptySchema, "400": ErrorSchema})
+def get_wishes(query: WishSearchSchema):
+    session = Session()
+    if query.card_id:
+        subquery = session.query(WishCards.wish_id).filter(WishCards.card_id == query.card_id)
+        wishes = session.query(Wish).filter(Wish.id.not_in(subquery)).all()
+    else:
+        wishes = session.query(Wish).all()
 
-    if not wishs:
+    if not wishes:
         return {'message': 'Nenhuma lista de desejos encontrada'}, 204
     else:
-        return build_wish_list(wishs), 200
+        return build_wish_list(wishes), 200
 
-@app.get('/wishs/<int:id>', tags=[wish_tag], responses={"200": WishSchema, "404": EmptySchema, "400": ErrorSchema})
-def get_wish(path: WishFetchSchema):
-    try:
-        wish = Session().query(Wish).filter(Wish.id == path.id).one()
-        return build_wish(wish), 200
-    except NoResultFound:
-        return {'message': 'Não há lista de desejos com esse id'}, 404
-
-
-@app.get('/wishs/<int:id>/cards', tags=[wish_tag], responses={"200": CardListSchema, "204": EmptySchema, "400": ErrorSchema})
+@app.get('/wishes/<int:id>/cards', tags=[wish_tag], responses={"200": CardListSchema, "204": EmptySchema, "400": ErrorSchema})
 def get_wish_cards(path: WishFetchSchema, query:CardSearchSchema):
     session = Session()
     q = session.query(WishCards).filter(WishCards.wish_id == path.id)
@@ -108,9 +94,9 @@ def get_wish_cards(path: WishFetchSchema, query:CardSearchSchema):
         print (cards[0].card_obj.id)
         return build_card_list(cards, session), 200
 
-@app.post('/wishs', tags=[wish_tag], responses={"201": WishSchema, "400": ErrorSchema})
+@app.post('/wishes', tags=[wish_tag], responses={"201": WishSchema, "400": ErrorSchema})
 def create_wish(body: NewWishSchema):
-    wish_to_create = Wish(name=body.name, description=body.description)
+    wish_to_create = Wish(name=body.name, description=body.description, color=body.color)
 
     session = Session()
 
@@ -124,7 +110,7 @@ def create_wish(body: NewWishSchema):
         logger.info('wish already exists')
         return {'message': 'Já existe uma lista de desejos com esse nome'}, 400
 
-@app.put('/wishs/<int:id>', tags=[wish_tag], responses={"200": EmptySchema, "400": ErrorSchema})
+@app.put('/wishes/<int:id>', tags=[wish_tag], responses={"200": EmptySchema, "400": ErrorSchema})
 def insert_card(path: WishFetchSchema, body:CardFetchSchema):
     session = Session()
     success = []
@@ -141,7 +127,7 @@ def insert_card(path: WishFetchSchema, body:CardFetchSchema):
     return {'message': 'Cartas {} adicionadas com sucesso'.format(', '.join(success))}, 200
     
 
-@app.delete('/wishs/<int:id>/card', tags=[wish_tag], responses={"200": EmptySchema, "400": ErrorSchema})
+@app.delete('/wishes/<int:id>/card', tags=[wish_tag], responses={"200": EmptySchema, "400": ErrorSchema})
 def remove_card(path: WishFetchSchema, body: CardFetchSchema):
     session = Session()
     success = []

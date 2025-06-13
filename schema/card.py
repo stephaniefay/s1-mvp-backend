@@ -2,9 +2,11 @@ from pydantic import BaseModel, Field
 from typing import Optional, List
 
 from model import Session, Cost, Cards
+from schema.ability import AbilitySchema, build_ability
 from schema.attack import AttackSchema, build_attack
 from schema.image import ImageSchema, build_images_card
 from schema.legality import LegalitySchema, build_legality
+from schema.resistance import build_resistance
 from schema.weakness import WeaknessSchema, build_weakness
 
 
@@ -22,6 +24,7 @@ class CardSchema(BaseModel):
     rarity: str
     legalities: LegalitySchema
     images: ImageSchema
+    abilities: List[AbilitySchema]
 
 
 class CardListSchema(BaseModel):
@@ -68,11 +71,13 @@ def build_card(card: Cards, session: Session):
             "rules": [card.rules],
             "attacks": [build_attack(d.attack_obj, session) for d in card.attack_obj],
             "weaknesses": [build_weakness(d.weakness_obj) for d in card.weakness_obj],
+            "resistances": [build_resistance(d.resistance_obj) for d in card.resistance_obj],
             "retreatCost": [d.type for d in costs],
             "number": card.number,
             "rarity": card.rarity,
             "legalities": build_legality(card.unlimited, card.standard, card.expanded),
-            "images": build_images_card(card.image_sm, card.image_lg)
+            "images": build_images_card(card.image_sm, card.image_lg),
+            "abilities": [build_ability(d.ability_obj) for d in card.ability_obj],
         }
     else:
         return None

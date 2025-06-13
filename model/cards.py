@@ -30,6 +30,8 @@ class Cards(Base):
     type_obj = relationship('CardTypes')
     attack_obj = relationship('CardAttacks')
     weakness_obj = relationship('CardWeaknesses')
+    ability_obj = relationship('CardAbilities')
+    resistance_obj = relationship('CardResistances')
 
 def __init__(self, id:str, name:str, hp:int, number:int, rarity:int, supertype:int, image_sm:str, image_lg:str,
              unlimited:int, expanded:int, standard:int):
