@@ -7,13 +7,6 @@
     <list default="true" id="58b40a52-6cae-455d-9fe5-253c152c44b9" name="Changes" comment="fixing foreign keys and endpoint to get all sets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/cards.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/cards.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/database/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/cost.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/set.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/set.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +112,12 @@
       <workItem from="1749605842610" duration="579000" />
       <workItem from="1749606449551" duration="13926000" />
       <workItem from="1749676973478" duration="2726000" />
+      <workItem from="1749817466153" duration="59000" />
+      <workItem from="1750538490514" duration="7000" />
+      <workItem from="1750538597042" duration="30000" />
+      <workItem from="1750539143933" duration="92000" />
+      <workItem from="1750713657448" duration="4000" />
+      <workItem from="1750718654770" duration="1995000" />
     </task>
     <task id="LOCAL-00001" summary="database schema (initial)">
       <option name="closed" value="true" />
