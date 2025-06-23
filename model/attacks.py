@@ -11,9 +11,3 @@ class Attacks(Base):
     name = Column(String, nullable=False)
     damage = Column(String)
     text = Column(String)
-
-def __init__(self, id:int, name:str, damage:str, text:str):
-    self.id = id
-    self.name = name
-    self.damage = damage
-    self.text = text

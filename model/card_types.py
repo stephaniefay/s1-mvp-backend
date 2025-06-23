@@ -5,6 +5,7 @@ from model import Base
 from model.cards import Cards
 from model.type import Type
 
+
 class CardTypes(Base):
     __tablename__ = 'card_types'
 
@@ -15,8 +16,3 @@ class CardTypes(Base):
 
     card_obj = relationship('Cards')
     type_obj = relationship('Type')
-
-def __init__(self, id:int, card_id:str, type_id:int):
-    self.id = id
-    self.card_id = card_id
-    self.type_id = type_id

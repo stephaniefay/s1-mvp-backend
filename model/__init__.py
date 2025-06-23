@@ -54,7 +54,7 @@ if empty_db:
         with open('database/sets.sql', 'r', encoding='utf-8') as sets:
             for line in sets:
                 line = line.replace('\n', '')
-                print ('executing: ' + line)
+                print('executing: ' + line)
                 connection.execute(text(line))
                 connection.commit()
         sets.close()
@@ -62,9 +62,7 @@ if empty_db:
         with open('database/cards.sql', 'r', encoding='utf-8') as cards:
             for line in cards:
                 line = line.replace('\n', '')
-                print ('executing: ' + line)
+                print('executing: ' + line)
                 connection.execute(text(line))
                 connection.commit()
         cards.close()
-
-

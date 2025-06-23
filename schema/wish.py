@@ -18,9 +18,9 @@ class WishListSchema(BaseModel):
 class WishFetchSchema(BaseModel):
     id: int = Field(..., description='id da lista de desejos')
 
+
 class WishSearchSchema(BaseModel):
     card_id: Optional[str] = Field(None, description='id da carta')
-
 
 
 class NewWishSchema(BaseModel):

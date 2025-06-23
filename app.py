@@ -1,4 +1,3 @@
-
 from flask_openapi3 import OpenAPI, Info, Tag, request
 from flask import redirect
 
@@ -17,9 +16,11 @@ default_tag = Tag(name="Documentação", description="Documentação corrente da
 set_tag = Tag(name="Coleções", description="Endpoints para visualizar as coleções")
 wish_tag = Tag(name="Wish", description="Endpoints para manipular sua lista de desejos")
 
+
 @app.get('/', tags=[default_tag], summary="Documentação Swagger")
 def home():
     return redirect('/openapi/swagger')
+
 
 @app.get('/sets', tags=[set_tag], responses={"200": SetListSchema, "204": EmptySchema, "400": ErrorSchema},
          summary="Lista todos as coleções")
@@ -37,9 +38,11 @@ def get_sets(query: SetSearchSchema):
         else:
             return build_set_list(sets), 200
 
-@app.get('/sets/<string:id>/cards', tags=[set_tag], responses={"200": CardListSchema, "204": EmptySchema, "400": ErrorSchema},
+
+@app.get('/sets/<string:id>/cards', tags=[set_tag],
+         responses={"200": CardListSchema, "204": EmptySchema, "400": ErrorSchema},
          summary="Lista todas as cartas de uma coleção")
-def get_set_cards(path: SetFetchSchema, query:CardSearchSchema):
+def get_set_cards(path: SetFetchSchema, query: CardSearchSchema):
     with Session() as session:
         q = session.query(SetCards).filter(SetCards.set_id == path.id)
 
@@ -60,6 +63,7 @@ def get_set_cards(path: SetFetchSchema, query:CardSearchSchema):
         else:
             return build_card_list(cards, session), 200
 
+
 @app.get('/wishes', tags=[wish_tag], responses={"200": WishListSchema, "204": EmptySchema, "400": ErrorSchema},
          summary="Lista todos as listas de desejo")
 def get_wishes(query: WishSearchSchema):
@@ -75,9 +79,11 @@ def get_wishes(query: WishSearchSchema):
         else:
             return build_wish_list(wishes), 200
 
-@app.get('/wishes/<int:id>/cards', tags=[wish_tag], responses={"200": CardListSchema, "204": EmptySchema, "400": ErrorSchema},
+
+@app.get('/wishes/<int:id>/cards', tags=[wish_tag],
+         responses={"200": CardListSchema, "204": EmptySchema, "400": ErrorSchema},
          summary="Lista todas as cartas de uma lista de desejo")
-def get_wish_cards(path: WishFetchSchema, query:CardSearchSchema):
+def get_wish_cards(path: WishFetchSchema, query: CardSearchSchema):
     with Session() as session:
         q = session.query(WishCards).filter(WishCards.wish_id == path.id)
 
@@ -96,8 +102,9 @@ def get_wish_cards(path: WishFetchSchema, query:CardSearchSchema):
         if not cards:
             return {'message': 'Nenhuma carta encontrada'}, 204
         else:
-            print (cards[0].card_obj.id)
+            print(cards[0].card_obj.id)
             return build_card_list(cards, session), 200
+
 
 @app.post('/wishes', tags=[wish_tag], responses={"201": WishSchema, "400": ErrorSchema},
           summary="Criação de uma nova lista de desejos")
@@ -115,9 +122,10 @@ def create_wish(body: NewWishSchema):
             logger.info('wish already exists')
             return {'message': 'Já existe uma lista de desejos com esse nome'}, 400
 
+
 @app.put('/wishes/<int:id>', tags=[wish_tag], responses={"200": EmptySchema, "400": ErrorSchema},
          summary="Inserir cartas na lista de desejos")
-def insert_card(path: WishFetchSchema, body:CardFetchSchema):
+def insert_card(path: WishFetchSchema, body: CardFetchSchema):
     with Session() as session:
         success = []
         for card_id in body.ids:
@@ -133,7 +141,7 @@ def insert_card(path: WishFetchSchema, body:CardFetchSchema):
                 logger.info('wish already contains card {}'.format(card_id))
 
         return {'message': 'Cartas {} adicionadas com sucesso'.format(', '.join(success))}, 200
-    
+
 
 @app.delete('/wishes/<int:id>/card', tags=[wish_tag], responses={"200": EmptySchema, "400": ErrorSchema},
             summary="Remover cartas da lista de desejos")

@@ -2,11 +2,9 @@ from logging.config import dictConfig
 import logging
 import os
 
-
 log_path = "log/"
 if not os.path.exists(log_path):
     os.makedirs(log_path)
-
 
 dictConfig({
     "version": 1,
@@ -44,7 +42,7 @@ dictConfig({
     },
     "loggers": {
         "gunicorn.error": {
-            "handlers": ["console", "error_file"],  #, email],
+            "handlers": ["console", "error_file"],  # , email],
             "level": "INFO",
             "propagate": False,
         }
@@ -54,6 +52,5 @@ dictConfig({
         "level": "INFO",
     }
 })
-
 
 logger = logging.getLogger(__name__)

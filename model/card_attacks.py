@@ -16,10 +16,3 @@ class CardAttacks(Base):
 
     card_obj = relationship('Cards')
     attack_obj = relationship('Attacks')
-
-def __init__(self, id:int, card_id:str, attack_id:int):
-    self.id = id
-    self.card_id = card_id
-    self.attack_id = attack_id
-
-

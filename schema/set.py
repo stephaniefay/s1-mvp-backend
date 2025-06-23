@@ -8,24 +8,26 @@ from schema.legality import LegalitySchema
 
 
 class SetSchema(BaseModel):
-    id:str = ''
-    name:str = ''
-    series:str = ''
+    id: str = ''
+    name: str = ''
+    series: str = ''
     printedTotal: int
     legalities: Optional[LegalitySchema]
-    ptcgoCode: str =  ''
+    ptcgoCode: str = ''
     releaseDate: str = ''
     images: Optional[ImageSchema]
 
+
 class SetFetchSchema(BaseModel):
     id: str = Field(..., description='id da coleção')
+
 
 class SetSearchSchema(BaseModel):
     name: Optional[str] = Field(None, description='nome da coleção')
 
 
 class SetListSchema(BaseModel):
-    sets:List[SetSchema]
+    sets: List[SetSchema]
 
 
 def build_set_list(sets: List[Set]):
@@ -39,7 +41,7 @@ def build_set_list(sets: List[Set]):
             "legalities": build_legality(set.unlimited, set.standard, set.expanded),
             "ptcgoCode": set.ptcgo_code,
             "releaseDate": set.release_date,
-            "images":build_images_set(set.image_symbol, set.image_logo)
+            "images": build_images_set(set.image_symbol, set.image_logo)
         })
     return {"sets": result}
 
@@ -53,5 +55,5 @@ def build_set(set: Set):
         "legalities": build_legality(set.unlimited, set.standard, set.expanded),
         "ptcgoCode": set.ptcgo_code,
         "releaseDate": set.release_date,
-        "images":build_images_set(set.image_symbol, set.image_logo)
+        "images": build_images_set(set.image_symbol, set.image_logo)
     }

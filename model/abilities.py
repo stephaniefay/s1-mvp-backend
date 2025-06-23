@@ -11,9 +11,3 @@ class Abilities(Base):
     name = Column(String, nullable=False)
     text = Column(String)
     type = Column(String)
-
-def __init__(self, id:int, name:str, text:str, type:str):
-    self.id = id
-    self.name = name
-    self.text = text
-    self.type = type

@@ -9,7 +9,3 @@ class Subtype(Base):
     # General Info
     id = Column(Integer, primary_key=True)
     type = Column(String, nullable=False)
-
-def __init__(self, id:int, type:str):
-    self.id = id
-    self.type = type

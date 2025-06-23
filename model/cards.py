@@ -4,6 +4,7 @@ from sqlalchemy.orm import relationship
 from model import Base
 from model.supertype import Supertype
 
+
 class Cards(Base):
     __tablename__ = 'cards'
 
@@ -32,17 +33,3 @@ class Cards(Base):
     weakness_obj = relationship('CardWeaknesses')
     ability_obj = relationship('CardAbilities')
     resistance_obj = relationship('CardResistances')
-
-def __init__(self, id:str, name:str, hp:int, number:int, rarity:int, supertype:int, image_sm:str, image_lg:str,
-             unlimited:int, expanded:int, standard:int):
-    self.id = id
-    self.name = name
-    self.hp = hp
-    self.number = number
-    self.rarity = rarity
-    self.supertype = supertype
-    self.image_sm = image_sm
-    self.image_lg = image_lg
-    self.unlimited = unlimited
-    self.expanded = expanded
-    self.standard = standard

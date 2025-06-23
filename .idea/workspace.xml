@@ -4,9 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58b40a52-6cae-455d-9fe5-253c152c44b9" name="Changes" comment="fixing foreign keys and endpoint to get all sets">
+    <list default="true" id="58b40a52-6cae-455d-9fe5-253c152c44b9" name="Changes" comment="adding with session to close sessions and removing db from repository (to force people to create new dbs everytime they clone)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/abilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/abilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/attacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/attacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/card_abilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/card_abilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/card_attacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/card_attacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/card_resistances.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/card_resistances.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/card_subtypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/card_subtypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/card_types.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/card_types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/card_weaknesses.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/card_weaknesses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cost.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cost.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/resistances.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/resistances.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/series.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/series.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/set.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/set_cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/set_cards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/subtype.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/subtype.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/supertype.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/supertype.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/type.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/weaknesses.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/weaknesses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/wish.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/wish.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/wish_cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/wish_cards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/ability.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/ability.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/attack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/auxiliary.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/auxiliary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/legality.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/legality.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/resistance.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/resistance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/set.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/weakness.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/weakness.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/wish.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/wish.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +150,7 @@
       <workItem from="1750538597042" duration="30000" />
       <workItem from="1750539143933" duration="92000" />
       <workItem from="1750713657448" duration="4000" />
-      <workItem from="1750718654770" duration="1995000" />
+      <workItem from="1750718654770" duration="2794000" />
     </task>
     <task id="LOCAL-00001" summary="database schema (initial)">
       <option name="closed" value="true" />
@@ -167,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749647701494</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="adding with session to close sessions and removing db from repository (to force people to create new dbs everytime they clone)">
+      <option name="closed" value="true" />
+      <created>1750721474187</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1750721474187</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +233,7 @@
     <MESSAGE value="defining schemas and models, fixing documentation" />
     <MESSAGE value="adding sql script, initializing db with info in first execution" />
     <MESSAGE value="fixing foreign keys and endpoint to get all sets" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing foreign keys and endpoint to get all sets" />
+    <MESSAGE value="adding with session to close sessions and removing db from repository (to force people to create new dbs everytime they clone)" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding with session to close sessions and removing db from repository (to force people to create new dbs everytime they clone)" />
   </component>
 </project>

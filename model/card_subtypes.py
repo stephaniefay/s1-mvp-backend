@@ -5,6 +5,7 @@ from model import Base
 from model.cards import Cards
 from model.subtype import Subtype
 
+
 class CardSubtypes(Base):
     __tablename__ = 'card_subtype'
 
@@ -15,8 +16,3 @@ class CardSubtypes(Base):
 
     card_obj = relationship('Cards')
     subtype_obj = relationship('Subtype')
-
-def __init__(self, id: int, card_id: str, subtype_id: int):
-    self.id = id
-    self.card_id = card_id
-    self.subtype_id = subtype_id

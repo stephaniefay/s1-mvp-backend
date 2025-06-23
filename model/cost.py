@@ -13,10 +13,3 @@ class Cost(Base):
     order = Column(Integer, nullable=False)
     id_ref = Column(String, nullable=False)
     type_ref = Column(String, nullable=False)
-
-def __init__(self, id:int, type:int, order:int, id_ref:str, type_ref:str):
-    self.id = id
-    self.type = type
-    self.order = order
-    self.id_ref = id_ref
-    self.type_ref = type_ref

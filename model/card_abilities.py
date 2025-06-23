@@ -17,8 +17,3 @@ class CardAbilities(Base):
 
     card_obj = relationship('Cards')
     ability_obj = relationship('Abilities')
-
-def __init__(self, id:int, card_id:str, ability_id:int):
-    self.id = id
-    self.card_id = card_id
-    self.ability_id = ability_id
