@@ -37,12 +37,6 @@ class CardQuery(BaseModel):
     search_clause: Optional[str]
 
 
-class CardSearchSchema(BaseModel):
-    name: Optional[str] = Field(None, description='nome da carta')
-    type: Optional[int] = Field(None, description='tipo da carta')
-    rarity: Optional[str] = Field(None, description='raridade da carta')
-
-
 class CardFetchSchema(BaseModel):
     ids: List[str] = Field(..., description='id da carta')
 

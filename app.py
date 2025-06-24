@@ -3,7 +3,7 @@ from flask import redirect
 
 from sqlalchemy.exc import IntegrityError, NoResultFound
 
-from model import Session, Set, SetCards, Cards, WishCards
+from model import Session, Set, SetCards, Cards, WishCards, CardTypes, Type
 from logger import logger
 from schema import *
 from flask_cors import CORS
@@ -42,19 +42,13 @@ def get_sets(query: SetSearchSchema):
 @app.get('/sets/<string:id>/cards', tags=[set_tag],
          responses={"200": CardListSchema, "204": EmptySchema, "400": ErrorSchema},
          summary="Lista todas as cartas de uma coleção")
-def get_set_cards(path: SetFetchSchema, query: CardSearchSchema):
+def get_set_cards(path: SetFetchSchema, query: SearchSchema):
     with Session() as session:
         q = session.query(SetCards).filter(SetCards.set_id == path.id)
 
-        if query.name or query.type or query.rarity:
+        if query.search:
             q = q.join(SetCards.card_obj)
-
-        if query.name:
-            q = q.filter(Cards.name.like("%{}%".format(query.name)))
-        if query.rarity:
-            q = q.filter(Cards.rarity.like("%{}%".format(query.rarity)))
-        if query.type:
-            q = q.filter(Cards.type == query.type)
+            q = q.filter(Cards.name.like("%{}%".format(query.search)))
 
         cards = q.all()
 
@@ -83,19 +77,13 @@ def get_wishes(query: WishSearchSchema):
 @app.get('/wishes/<int:id>/cards', tags=[wish_tag],
          responses={"200": CardListSchema, "204": EmptySchema, "400": ErrorSchema},
          summary="Lista todas as cartas de uma lista de desejo")
-def get_wish_cards(path: WishFetchSchema, query: CardSearchSchema):
+def get_wish_cards(path: WishFetchSchema, query: SearchSchema):
     with Session() as session:
         q = session.query(WishCards).filter(WishCards.wish_id == path.id)
 
-        if query.name or query.type or query.rarity:
+        if query.search:
             q = q.join(WishCards.card_obj)
-
-        if query.name:
-            q = q.filter(Cards.name.like("%{}%".format(query.name)))
-        if query.rarity:
-            q = q.filter(Cards.rarity.like("%{}%".format(query.rarity)))
-        if query.type:
-            q = q.filter(Cards.type == query.type)
+            q = q.filter(Cards.name.like("%{}%".format(query.search)))
 
         cards = q.all()
 
