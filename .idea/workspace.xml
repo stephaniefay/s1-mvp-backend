@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58b40a52-6cae-455d-9fe5-253c152c44b9" name="Changes" comment="removing inits, formatting files">
+    <list default="true" id="58b40a52-6cae-455d-9fe5-253c152c44b9" name="Changes" comment="changing search behavior">
       <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/dataSources/b5417a09-7bff-4dbf-a3d4-212d8d2faf51.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/dataSources/b5417a09-7bff-4dbf-a3d4-212d8d2faf51/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
@@ -23,8 +23,7 @@
       <change afterPath="$PROJECT_DIR$/log/gunicorn.detailed.log.9" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/auxiliary.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/auxiliary.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/set.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/set.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +134,8 @@
       <workItem from="1750538597042" duration="30000" />
       <workItem from="1750539143933" duration="92000" />
       <workItem from="1750713657448" duration="4000" />
-      <workItem from="1750718654770" duration="8838000" />
+      <workItem from="1750718654770" duration="9246000" />
+      <workItem from="1750977510923" duration="723000" />
     </task>
     <task id="LOCAL-00001" summary="database schema (initial)">
       <option name="closed" value="true" />
@@ -201,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750722113944</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="changing search behavior">
+      <option name="closed" value="true" />
+      <created>1750809245160</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1750809245160</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +236,7 @@
     <MESSAGE value="fixing foreign keys and endpoint to get all sets" />
     <MESSAGE value="adding with session to close sessions and removing db from repository (to force people to create new dbs everytime they clone)" />
     <MESSAGE value="removing inits, formatting files" />
-    <option name="LAST_COMMIT_MESSAGE" value="removing inits, formatting files" />
+    <MESSAGE value="changing search behavior" />
+    <option name="LAST_COMMIT_MESSAGE" value="changing search behavior" />
   </component>
 </project>
