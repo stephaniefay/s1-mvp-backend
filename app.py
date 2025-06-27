@@ -1,13 +1,14 @@
-from flask import redirect
-from flask_cors import CORS
 from flask_openapi3 import OpenAPI, Info, Tag, request
+from flask import redirect
+
 from sqlalchemy.exc import IntegrityError, NoResultFound
 
+from model import Session, Set, SetCards, Cards, WishCards, CardTypes, Type
 from logger import logger
-from model import SetCards, WishCards
 from schema import *
+from flask_cors import CORS
 
-info = Info(title="Wish", version="1.0.0")
+info = Info(title="MyWish", version="1.0.0")
 app = OpenAPI(__name__, info=info)
 CORS(app)
 
@@ -23,15 +24,19 @@ def home():
 
 @app.get('/sets', tags=[set_tag], responses={"200": SetListSchema, "204": EmptySchema, "400": ErrorSchema},
          summary="Lista todos as coleções")
-def get_sets():
+def get_sets(query: SetSearchSchema):
     with Session() as session:
-        logger.info('get all')
-        sets = session.query(Set).all()
+        if query.name:
+            logger.info('searching by name')
+            sets = session.query(Set).filter(Set.name.like("%{}%".format(query.name))).all()
+        else:
+            logger.info('get all')
+            sets = session.query(Set).all()
 
-    if not sets:
-        return {'message': 'Nenhuma coleção encontrada'}, 204
-    else:
-        return build_set_list(sets), 200
+        if not sets:
+            return {'message': 'Nenhuma coleção encontrada'}, 204
+        else:
+            return build_set_list(sets), 200
 
 
 @app.get('/sets/<string:id>/cards', tags=[set_tag],
