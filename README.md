@@ -29,7 +29,7 @@ python3 -m venv venv
 No diretório raiz do projeto você encontrará um arquivo `requirements.txt` que contém todas as libs que foram utilizadas e precisarão ser instaladas.
 
 ```
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Inicializando o back-end
@@ -37,5 +37,5 @@ $ pip install -r requirements.txt
 Após as libs terem sido instaladas corretamente, você poderá executar a API utilizando o código abaixo e ela estará disponível no caminho [http://localhost:5000/#/](http://localhost:5000/#/).
 
 ```
-$ flask run --host 0.0.0.0 --port 5000
+flask run --host 0.0.0.0 --port 5000
 ```
