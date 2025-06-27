@@ -15,7 +15,7 @@ Para criar o ambiente virtual você poderá rodar o seguinte comando, conforme o
 #### Windows
 ```
 python -m venv venv
-.\venv\Scripts\activate.bat
+.\venv\Scripts\activate
 ```
 
 #### Debian
