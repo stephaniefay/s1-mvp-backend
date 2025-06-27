@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58b40a52-6cae-455d-9fe5-253c152c44b9" name="Changes" comment="changing search behavior">
+    <list default="true" id="58b40a52-6cae-455d-9fe5-253c152c44b9" name="Changes" comment="removing unused search">
       <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/dataSources/b5417a09-7bff-4dbf-a3d4-212d8d2faf51.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/dataSources/b5417a09-7bff-4dbf-a3d4-212d8d2faf51/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
@@ -22,8 +22,7 @@
       <change afterPath="$PROJECT_DIR$/log/gunicorn.detailed.log.8" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/log/gunicorn.detailed.log.9" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/set.py" beforeDir="false" afterPath="$PROJECT_DIR$/schema/set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,26 +70,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/steph/Projects/Pós PUC/Sprint 1/s1-mvp-backend/database&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.17356321&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/steph/Projects/Pós PUC/Sprint 1/s1-mvp-backend/database",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.17356321",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\steph\Projects\Pós PUC\Sprint 1\s1-mvp-backend\database" />
@@ -135,7 +135,7 @@
       <workItem from="1750539143933" duration="92000" />
       <workItem from="1750713657448" duration="4000" />
       <workItem from="1750718654770" duration="9246000" />
-      <workItem from="1750977510923" duration="723000" />
+      <workItem from="1750977510923" duration="2972000" />
     </task>
     <task id="LOCAL-00001" summary="database schema (initial)">
       <option name="closed" value="true" />
@@ -209,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750809245160</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="removing unused search">
+      <option name="closed" value="true" />
+      <created>1750979805260</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1750979805261</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +245,7 @@
     <MESSAGE value="adding with session to close sessions and removing db from repository (to force people to create new dbs everytime they clone)" />
     <MESSAGE value="removing inits, formatting files" />
     <MESSAGE value="changing search behavior" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing search behavior" />
+    <MESSAGE value="removing unused search" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing unused search" />
   </component>
 </project>

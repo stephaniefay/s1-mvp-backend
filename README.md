@@ -7,11 +7,32 @@ Dados mockados foram gerados utilizando uma API pública em json e posteriorment
 
 ## Como executar
 
-Antes de qualquer coisa será necessário ter certeza de que você está com um `venv` ativo e funcional. No diretório raiz do projeto você encontrará um arquivo `requirements.txt` que contém todas as libs que foram utilizadas e precisarão ser instaladas.
+Antes de qualquer coisa será necessário ter certeza de que você está com um `venv` ativo e funcional, para isso você primeiro precisará instalar o [Python](https://www.python.org/) em sua máquina.
+
+### Criação do ambiente virtual
+Para criar o ambiente virtual você poderá rodar o seguinte comando, conforme o sistema operacional utilizado:
+
+#### Windows
+```
+python -m venv venv
+.\venv\Scripts\activate.bat
+```
+
+#### Debian
+```
+python3 -m venv venv
+. venv/bin/activate
+```
+
+### Instalação das bibliotecas utilizadas
+
+No diretório raiz do projeto você encontrará um arquivo `requirements.txt` que contém todas as libs que foram utilizadas e precisarão ser instaladas.
 
 ```
 $ pip install -r requirements.txt
 ```
+
+## Inicializando o back-end
 
 Após as libs terem sido instaladas corretamente, você poderá executar a API utilizando o código abaixo e ela estará disponível no caminho [http://localhost:5000/#/](http://localhost:5000/#/).
 
