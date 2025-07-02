@@ -39,3 +39,58 @@ Após as libs terem sido instaladas corretamente, você poderá executar a API u
 ```
 flask run --host 0.0.0.0 --port 5000
 ```
+
+## Rotas
+Todas as rotas abaixo descritas também podem ser consultadas na documentação Swagger do projeto uma vez que ele esteja em execução.
+
+### Coleções
+
+ - `/sets` **GET**
+
+Busca todas as coleções disponíveis que estão cadastradas na API. Pode ser usado um query parameter `name` contendo parte do nome da coleção para a filtragem.
+
+ - `/sets/{id}/cards` **GET**
+
+Busca todas as cartas contidas em uma coleção utilizando seu ID. Pode ser usado um query parameter `search` contendo parte do nome da carta para a filtragem.
+
+### Listas de Desejo
+
+  - `/wishes` **GET** 
+ 
+ Busca todas as listas de desejo disponíveis que estão cadastradas na API. Possui um query parameter `card_id` que deve ser usado para filtrar todas as listas que não possuem uma carta específica.
+ 
+  - `/wishes/{ìd}/cards` **GET**
+ 
+ Busca todas as cartas contidas em uma lista de desejo utilizando seu ID. Pode ser usado um query parameter `search` contendo parte do nome da carta para a filtragem.
+ 
+  - `/wishes` **POST**
+ 
+ Rota para criação de uma lista de desejos. Deve obrigatoriamente ser passado um body contendo os campos
+
+```
+{
+  "name": "nome da lista de desejos",
+  "description": "descrição da lista de desejos (opcional)",
+  "color": "cor em código hexadecimal para definir a cor da coleção (opcional)"
+}
+```
+  
+  - `/wishes/{id}` **PUT** 
+ 
+ Rota para associação de uma carta a uma lista de desejos. Deve ser passado o ID da lista no próprio path e, no body, uma lista com os `ids` das cartas a serem associadas.
+
+ ```
+{
+  "ids": ["aqui deve ser inserido os ids de todas as cartas a serem adicionadas"]
+}
+```
+ 
+   - `/wishes/{id}/card` **DELETE**
+ 
+ Rota para a remoção de uma carta de uma lista de desejos. Deve ser passado o ID da lista no próprio path e, no body, uma lista com os `ids` das cartas a serem removidas.
+
+  ```
+{
+  "ids": ["aqui deve ser inserido os ids de todas as cartas a serem removidas"]
+}
+```
